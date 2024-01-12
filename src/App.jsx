@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from 'react';
 import { currencyContext } from './context/currencyContext';
 import axios from 'axios';
 import { GitHub } from '@mui/icons-material';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 function App() {
 
   const { fromCurrency, setFromCurrency, toCurrency, setToCurrency, firstAmount, setFirstAmount } = useContext(currencyContext)
@@ -38,9 +39,15 @@ function App() {
     boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1);",
     position: "relative"
   }
+  
   return (
     <Container maxWidth="md" sx={boxStyles}>
-      <Typography variant='h5' sx={{ marginBottom: "2em",fontWeight:"bold" }}> $  Get real time currency rates</Typography>
+    
+          
+          <Typography  variant='h5' sx={{ marginBottom: "2em",fontWeight:"bold" }}> 
+          <CurrencyExchangeIcon sx={{fontSize: "1.3rem"}} />
+          <box className='title'> Xchange</box> Pal</Typography>
+      <Typography variant='h5' sx={{ marginBottom: "2em",fontWeight:"bold" }}> Get real time currency rates</Typography>
       <Grid container spacing={2}>
         <InputAmount />
         <SelectCountry label="from" value={fromCurrency} setValue={setFromCurrency} />
